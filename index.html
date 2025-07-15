@@ -3,23 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DFF Products Page</title>
+  <title>DFF Product Catalog</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f7f7;
       display: flex;
+      background-color: #f2f2f2;
     }
 
-    /* Sidebar styles */
+    /* Sidebar */
     .sidebar {
       width: 250px;
       background-color: #388e3c;
       color: white;
       padding: 30px 20px;
       position: sticky;
-      top: 0;
       height: 100vh;
     }
 
@@ -34,6 +33,7 @@
       text-decoration: none;
       margin-bottom: 12px;
       padding-left: 10px;
+      cursor: pointer;
     }
 
     .sidebar a:hover {
@@ -45,17 +45,6 @@
     .content {
       flex-grow: 1;
       padding: 30px;
-    }
-
-    .category {
-      margin-top: 50px;
-    }
-
-    .category h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #c8e6c9;
-      padding-bottom: 6px;
     }
 
     .grid {
@@ -79,6 +68,14 @@
     .product p {
       margin: 0;
     }
+
+    .category {
+      display: none;
+    }
+
+    .category.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -86,63 +83,65 @@
   <!-- Sidebar -->
   <nav class="sidebar">
     <h2>🧺 Products List</h2>
-    <a href="#farm-fresh">Farm-Fresh & Organic Produce</a>
-    <a href="#handmade">Natural & Handmade Goods</a>
-    <a href="#wellness">Artisanal & Wellness Products</a>
-    <a href="#crafts">Rural Crafts & Lifestyle</a>
-    <a href="#specialty">Specialty Farm Products</a>
+    <a onclick="showCategory('farmFresh')">Farm-Fresh & Organic Produce</a>
+    <a onclick="showCategory('handmade')">Natural & Handmade Goods</a>
+    <a onclick="showCategory('wellness')">Artisanal & Wellness Products</a>
+    <a onclick="showCategory('crafts')">Rural Crafts & Lifestyle</a>
+    <a onclick="showCategory('specialty')">Specialty Farm Products</a>
   </nav>
 
   <!-- Main content -->
   <div class="content">
-    <h1>🌿 DFF Product Catalog</h1>
-
-    <div class="category" id="farm-fresh">
-      <h2>Farm-Fresh & Organic Produce</h2>
+    <div id="farmFresh" class="category active">
       <div class="grid">
         <div class="product"><h3>Organic Millets</h3><p>500g pack</p></div>
-        <div class="product"><h3>Cold-Pressed Sesame Oil</h3><p>1L bottle</p></div>
+        <div class="product"><h3>Sesame Oil</h3><p>Cold-pressed, 1L</p></div>
         <div class="product"><h3>Raw Honey</h3><p>Natural & unprocessed</p></div>
         <div class="product"><h3>Organic Rice</h3><p>5kg bag</p></div>
       </div>
     </div>
 
-    <div class="category" id="handmade">
-      <h2>Natural & Handmade Goods</h2>
+    <div id="handmade" class="category">
       <div class="grid">
         <div class="product"><h3>Herbal Shampoo Bar</h3><p>Neem & Tulsi</p></div>
-        <div class="product"><h3>Eco Cleaner</h3><p>Made with citrus extracts</p></div>
+        <div class="product"><h3>Eco Cleaner</h3><p>With citrus extract</p></div>
         <div class="product"><h3>Soy Wax Candle</h3><p>Lavender scent</p></div>
       </div>
     </div>
 
-    <div class="category" id="wellness">
-      <h2>Artisanal & Wellness Products</h2>
+    <div id="wellness" class="category">
       <div class="grid">
         <div class="product"><h3>Ashwagandha Powder</h3><p>100g pack</p></div>
-        <div class="product"><h3>Herbal Tea Mix</h3><p>Spice blend for immunity</p></div>
+        <div class="product"><h3>Herbal Tea Mix</h3><p>Immunity booster</p></div>
         <div class="product"><h3>Oat Milk</h3><p>1L carton</p></div>
       </div>
     </div>
 
-    <div class="category" id="crafts">
-      <h2>Rural Crafts & Lifestyle</h2>
+    <div id="crafts" class="category">
       <div class="grid">
         <div class="product"><h3>Jute Shopping Bag</h3><p>Handwoven</p></div>
-        <div class="product"><h3>Terracotta Pot</h3><p>For cooking or décor</p></div>
+        <div class="product"><h3>Terracotta Pot</h3><p>Traditional cooking ware</p></div>
         <div class="product"><h3>Bamboo Desk Planter</h3><p>Eco-friendly gift</p></div>
       </div>
     </div>
 
-    <div class="category" id="specialty">
-      <h2>Specialty Farm Products</h2>
+    <div id="specialty" class="category">
       <div class="grid">
         <div class="product"><h3>Homemade Pickles</h3><p>Mango, Lemon, Garlic</p></div>
         <div class="product"><h3>A2 Cow Ghee</h3><p>250ml bottle</p></div>
         <div class="product"><h3>Millet Laddus</h3><p>Pack of 6</p></div>
       </div>
     </div>
-
   </div>
+
+  <!-- JS to handle category switching -->
+  <script>
+    function showCategory(id) {
+      const categories = document.querySelectorAll('.category');
+      categories.forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
