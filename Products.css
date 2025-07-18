@@ -63,7 +63,7 @@ body {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease;
@@ -76,8 +76,9 @@ body {
 /* Product Image */
 .product img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: 200px;
+  object-fit: contain; /* Ensures the whole image is visible without cropping */
+  background: #f9f9f9; /* Optional: gives a neutral background */
 }
 
 /* Product Info Section */
@@ -85,7 +86,6 @@ body {
   padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   flex-grow: 1;
 }
 
@@ -104,7 +104,6 @@ body {
 .product-info strong {
   color: #e91e63;
   font-weight: bold;
-  margin-top: auto;
 }
 
 /* Hover Effect */
