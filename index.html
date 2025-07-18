@@ -95,4 +95,34 @@
       <div class="product fashion show">
         <img src="images/Shoes.jpg" alt="Running Shoes" />
         <div class="product-info">
-          <h3>
+          <h3>Running Shoe</h3>
+          <p>Comfort & performance</p>
+          <strong>₹2,999</strong>
+        </div>
+      </div>
+
+      <div class="product fashion show">
+        <img src="images/Hoodie.jpg" alt="Trendy Hoodie" />
+        <div class="product-info">
+          <h3>Trendy Hoodie</h3>
+          <p>Warm & stylish</p>
+          <strong>₹1,899</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filtering Script -->
+  <script>
+    function filterProducts(category) {
+      const products = document.querySelectorAll('.product');
+      products.forEach(product => {
+        product.classList.remove('show');
+        if (category === 'all' || product.classList.contains(category)) {
+          product.classList.add('show');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
