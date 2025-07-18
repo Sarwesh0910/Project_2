@@ -121,19 +121,5 @@
             </div>
         </div>
     </div>
-
-    <!-- Filtering Script -->
-    <script>
-  function filterProducts(category) {
-    const products = document.querySelectorAll('.product');
-    products.forEach(product => {
-      if (category === 'all' || product.classList.contains(category)) {
-        product.classList.remove('hide');
-      } else {
-        product.classList.add('hide');
-      }
-    });
-  }
-</script>
 </body>
 </html>
