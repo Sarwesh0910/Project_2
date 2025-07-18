@@ -7,19 +7,20 @@
     <link rel="stylesheet" href="Products.css" />
 </head>
 <body>
+
     <!-- Sidebar -->
     <nav class="sidebar">
         <h2>🧺 Products List</h2>
-        <a href="#" onclick="filterProducts('all')">Show All</a>
-        <a href="#" onclick="filterProducts('electronics')">Electronics</a>
-        <a href="#" onclick="filterProducts('fashion')">Fashion & Accessories</a>
+        <a href="#" data-category="all">Show All</a>
+        <a href="#" data-category="electronics">Electronics</a>
+        <a href="#" data-category="fashion">Fashion & Accessories</a>
     </nav>
 
     <!-- Main content -->
     <div class="content">
         <div class="grid">
-            <!-- Electronics -->
-            <div class="product electronics show">
+            <!-- Product Cards -->
+            <div class="product electronics">
                 <img src="images/Powerbank.jpg" alt="Powerbank" />
                 <div class="product-info">
                     <h3>Powerbank</h3>
@@ -29,7 +30,7 @@
                 </div>
             </div>
 
-            <div class="product electronics show">
+            <div class="product electronics">
                 <img src="images/Soundbar.jpg" alt="Sound Bar" />
                 <div class="product-info">
                     <h3>Sound Bar</h3>
@@ -39,7 +40,7 @@
                 </div>
             </div>
 
-            <div class="product electronics show">
+            <div class="product electronics">
                 <img src="images/pendrive.jpg" alt="Pendrive" />
                 <div class="product-info">
                     <h3>Pendrive</h3>
@@ -49,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="product electronics show">
+            <div class="product electronics">
                 <img src="images/headphone.jpg" alt="Bluetooth Headphones" />
                 <div class="product-info">
                     <h3>Bluetooth Headphones</h3>
@@ -59,7 +60,7 @@
                 </div>
             </div>
 
-            <div class="product electronics show">
+            <div class="product electronics">
                 <img src="images/Smartwatch.jpg" alt="Smartwatch" />
                 <div class="product-info">
                     <h3>Smartwatch</h3>
@@ -69,7 +70,7 @@
                 </div>
             </div>
 
-            <div class="product electronics show">
+            <div class="product electronics">
                 <img src="images/Earbuds.jpg" alt="Wireless Earbuds" />
                 <div class="product-info">
                     <h3>Wireless Earbuds</h3>
@@ -79,8 +80,7 @@
                 </div>
             </div>
 
-            <!-- Fashion -->
-            <div class="product fashion show">
+            <div class="product fashion">
                 <img src="images/Sunglass.jpg" alt="Stylish Sunglasses" />
                 <div class="product-info">
                     <h3>Stylish Sunglasses</h3>
@@ -90,7 +90,7 @@
                 </div>
             </div>
 
-            <div class="product fashion show">
+            <div class="product fashion">
                 <img src="images/Backpack.jpg" alt="Casual Backpack" />
                 <div class="product-info">
                     <h3>Casual Backpack</h3>
@@ -100,7 +100,7 @@
                 </div>
             </div>
 
-            <div class="product fashion show">
+            <div class="product fashion">
                 <img src="images/Shoes.jpg" alt="Running Shoes" />
                 <div class="product-info">
                     <h3>Running Shoe</h3>
@@ -110,7 +110,7 @@
                 </div>
             </div>
 
-            <div class="product fashion show">
+            <div class="product fashion">
                 <img src="images/Hoodie.jpg" alt="Trendy Hoodie" />
                 <div class="product-info">
                     <h3>Trendy Hoodie</h3>
@@ -119,7 +119,33 @@
                     <button>Add to Cart</button>
                 </div>
             </div>
+
         </div>
     </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const category = this.getAttribute('data-category');
+                const products = document.querySelectorAll('.product');
+
+                products.forEach(product => {
+                    if (category === 'all' || product.classList.contains(category)) {
+                        product.style.display = 'flex';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+
+                // Optional: active link highlighting
+                document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
