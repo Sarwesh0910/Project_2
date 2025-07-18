@@ -1,92 +1,101 @@
-/* Body Styling */
-body {
+/* Reset and Base Styles */
+* {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #f4f9fc, #dbe9f4);
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Body Layout */
+body {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background-color: #f8f8f8;
 }
 
 /* Sidebar */
 .sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 220px;
-  background: #333;
+  width: 200px;
+  background-color: #222;
   color: #fff;
   padding: 20px;
+  flex-shrink: 0;
 }
 
 .sidebar h2 {
-  margin-top: 0;
+  font-size: 18px;
+  margin-bottom: 15px;
 }
 
 .sidebar a {
   display: block;
-  margin: 10px 0;
-  color: #fff;
+  color: #ccc;
   text-decoration: none;
-  font-weight: 600;
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .sidebar a:hover {
-  color: #00bcd4;
+  background-color: #444;
 }
 
-/* Content Area */
+/* Main Content */
 .content {
-  margin-left: 240px;
-  padding: 20px;
+  flex-grow: 1;
+  padding: 30px;
 }
 
-/* Grid Layout with Fixed Columns */
+/* Product Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
 }
 
 /* Product Card */
 .product {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  overflow: hidden;
-}
-
-.product img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  background: #f9f9f9;
-}
-
-.product-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   padding: 15px;
-  flex-grow: 1;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: none;
+  transition: transform 0.3s ease;
 }
 
-.product-info h3 {
-  margin: 0;
+.product.show {
+  display: block;
 }
 
-.product-info p {
-  margin: 5px 0;
+.product h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
 }
 
-.product-info strong {
-  margin-top: 5px;
+.product p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.product strong {
   color: #e91e63;
+  font-weight: bold;
 }
 
-/* Add to Cart Button */
+/* Product Image */
+.product img {
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
 .product button {
   margin-top: 10px;
   padding: 10px;
@@ -98,17 +107,34 @@ body {
   font-weight: 600;
 }
 
-/* Keep Grid Slots Fixed Using Visibility */
-.product {
-  visibility: visible;
-  opacity: 1;
-  transform: scale(1);
-  transition: all 0.3s ease;
+/* Hover Effect */
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.product.hide {
-  visibility: hidden;
-  opacity: 0;
-  transform: scale(0.8);
-  pointer-events: none;
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sidebar a {
+    margin: 5px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
 }
