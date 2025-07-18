@@ -1,138 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Our Products</title>
-  <link rel="stylesheet" href="Products.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Products</title>
+    <link rel="stylesheet" href="Products.css" />
 </head>
 <body>
-  <!-- Sidebar -->
-  <nav class="sidebar">
-    <h2>🧺 Products List</h2>
-    <a onclick="filterProducts('all')">Show All</a>
-    <a onclick="filterProducts('electronics')">Electronics</a>
-    <a onclick="filterProducts('fashion')">Fashion & Accessories</a>
-  </nav>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <h2>🧺 Products List</h2>
+        <a href="#" onclick="filterProducts('all')">Show All</a>
+        <a href="#" onclick="filterProducts('electronics')">Electronics</a>
+        <a href="#" onclick="filterProducts('fashion')">Fashion & Accessories</a>
+    </nav>
 
-  <!-- Main content -->
-  <div class="content">
-    <div class="grid">
-      <!-- Electronics Products -->
-      <div class="product electronics show">
-        <img src="images/Powerbank.jpg" alt="Powerbank" />
-        <div class="product-info">
-          <h3>Powerbank</h3>
-          <p>33 W (Backup upto 60 hours)</p>
-          <strong>₹499</strong>
-          <button>Add to Cart</button>
-        </div>
-      </div>
+    <!-- Main content -->
+    <div class="content">
+        <div class="grid">
+            <!-- Electronics -->
+            <div class="product electronics show">
+                <img src="images/Powerbank.jpg" alt="Powerbank" />
+                <div class="product-info">
+                    <h3>Powerbank</h3>
+                    <p>33 W (Backup up to 60 hours)</p>
+                    <strong>₹499</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
 
-      <div class="product electronics show">
-        <img src="images/Soundbar.jpg" alt="Sound Bar" />
-        <div class="product-info">
-          <h3>Sound Bar</h3>
-          <p>330 W with inbuilt Subwoofers</p>
-          <strong>₹3500</strong>
-          <button>Add to Cart</button>
-        </div>
-      </div>
+            <div class="product electronics show">
+                <img src="images/Soundbar.jpg" alt="Sound Bar" />
+                <div class="product-info">
+                    <h3>Sound Bar</h3>
+                    <p>330 W with inbuilt Subwoofers</p>
+                    <strong>₹3500</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
 
-      <div class="product electronics show">
-        <img src="images/pendrive.jpg" alt="Pendrive" />
-        <div class="product-info">
-          <h3>Pendrive</h3>
-          <p>128 GB</p>
-          <strong>₹1,299</strong>
-          <button>Add to Cart</button>
-        </div>
-      </div>
+            <div class="product electronics show">
+                <img src="images/pendrive.jpg" alt="Pendrive" />
+                <div class="product-info">
+                    <h3>Pendrive</h3>
+                    <p>128 GB</p>
+                    <strong>₹1,299</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
 
-      <div class="product electronics show">
-        <img src="images/headphone.jpg" alt="Bluetooth Headphones" />
-        <div class="product-info">
-          <h3>Bluetooth Headphones</h3>
-          <p>Wireless audio</p>
-          <strong>₹1,499</strong>
-          <button>Add to Cart</button>
-        </div>
-      </div>
+            <div class="product electronics show">
+                <img src="images/headphone.jpg" alt="Bluetooth Headphones" />
+                <div class="product-info">
+                    <h3>Bluetooth Headphones</h3>
+                    <p>Wireless audio</p>
+                    <strong>₹1,499</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
 
-      <div class="product electronics show">
-        <img src="images/Smartwatch.jpg" alt="Smartwatch" />
-        <div class="product-info">
-          <h3>Smartwatch</h3>
-          <p>Fitness & notifications</p>
-          <strong>₹2,499</strong>
-          <button>Add to Cart</button>
-        </div>
-      </div>
+            <div class="product electronics show">
+                <img src="images/Smartwatch.jpg" alt="Smartwatch" />
+                <div class="product-info">
+                    <h3>Smartwatch</h3>
+                    <p>Fitness & notifications</p>
+                    <strong>₹2,499</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
 
-      <div class="product electronics show">
-        <img src="images/Earbuds.jpg" alt="Wireless Earbuds" />
-        <div class="product-info">
-          <h3>Wireless Earbuds</h3>
-          <p>Compact & powerful</p>
-          <strong>₹1,999</strong>
-          <button>Add to Cart</button>
-        </div>
-      </div>
+            <div class="product electronics show">
+                <img src="images/Earbuds.jpg" alt="Wireless Earbuds" />
+                <div class="product-info">
+                    <h3>Wireless Earbuds</h3>
+                    <p>Compact & powerful</p>
+                    <strong>₹1,999</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
 
-      <!-- Fashion Products -->
-      <div class="product fashion show">
-        <img src="images/Sunglass.jpg" alt="Stylish Sunglasses" />
-        <div class="product-info">
-          <h3>Stylish Sunglasses</h3>
-          <p>UV protection</p>
-          <strong>₹799</strong>
-          <button>Add to Cart</button>
-        </div>
-      </div>
+            <!-- Fashion -->
+            <div class="product fashion show">
+                <img src="images/Sunglass.jpg" alt="Stylish Sunglasses" />
+                <div class="product-info">
+                    <h3>Stylish Sunglasses</h3>
+                    <p>UV protection</p>
+                    <strong>₹799</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
 
-      <div class="product fashion show">
-        <img src="images/Backpack.jpg" alt="Casual Backpack" />
-        <div class="product-info">
-          <h3>Casual Backpack</h3>
-          <p>Everyday use</p>
-          <strong>₹1,299</strong>
-          <button>Add to Cart</button>
-        </div>
-      </div>
+            <div class="product fashion show">
+                <img src="images/Backpack.jpg" alt="Casual Backpack" />
+                <div class="product-info">
+                    <h3>Casual Backpack</h3>
+                    <p>Everyday use</p>
+                    <strong>₹1,299</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
 
-      <div class="product fashion show">
-        <img src="images/Shoes.jpg" alt="Running Shoes" />
-        <div class="product-info">
-          <h3>Running Shoe</h3>
-          <p>Comfort & performance</p>
-          <strong>₹2,999</strong>
-          <button>Add to Cart</button>
-        </div>
-      </div>
+            <div class="product fashion show">
+                <img src="images/Shoes.jpg" alt="Running Shoes" />
+                <div class="product-info">
+                    <h3>Running Shoe</h3>
+                    <p>Comfort & performance</p>
+                    <strong>₹2,999</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
 
-      <div class="product fashion show">
-        <img src="images/Hoodie.jpg" alt="Trendy Hoodie" />
-        <div class="product-info">
-          <h3>Trendy Hoodie</h3>
-          <p>Warm & stylish</p>
-          <strong>₹1,899</strong>
-          <button>Add to Cart</button>
+            <div class="product fashion show">
+                <img src="images/Hoodie.jpg" alt="Trendy Hoodie" />
+                <div class="product-info">
+                    <h3>Trendy Hoodie</h3>
+                    <p>Warm & stylish</p>
+                    <strong>₹1,899</strong>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <!-- Filtering Script -->
-  <script>
-    function filterProducts(category) {
-      const products = document.querySelectorAll('.product');
-      products.forEach(product => {
-        product.classList.remove('show');
-        if (category === 'all' || product.classList.contains(category)) {
-          product.classList.add('show');
+    <!-- Filtering Script -->
+    <script>
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                if (category === 'all' || product.classList.contains(category)) {
+                    product.classList.add('show');
+                } else {
+                    product.classList.remove('show');
+                }
+            });
         }
-      });
-    }
-  </script>
+    </script>
 </body>
 </html>
